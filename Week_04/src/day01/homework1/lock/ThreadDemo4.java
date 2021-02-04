@@ -3,11 +3,11 @@ package day01.homework1.lock;
 /**
  * 共享变量，使用join进行通信
  */
-public class ThreadDemo1 {
+public class ThreadDemo4 {
     public static void main(String[] args) throws InterruptedException {
 
         long start=System.currentTimeMillis();
-        MethodClass methodClass = new MethodClass();
+        MethodClass4 methodClass = new MethodClass4();
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -26,7 +26,7 @@ public class ThreadDemo1 {
 
 }
 
-class MethodClass{
+class MethodClass4{
     int result;
 
     public void sum() {

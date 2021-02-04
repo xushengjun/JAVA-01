@@ -6,12 +6,12 @@ import java.util.concurrent.ExecutionException;
  * 使用Thread.activeCount()配合yield方法
  * 如果存活线程数量大于创建子线程之前的数量（即子线程还存活），就让主线程让出cpu执行权，退回到可执行状态
  */
-public class ThreadDemo5 {
+public class ThreadDemo11 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         int count = Thread.activeCount();
         System.out.println("当前线程总数："+count);
         long start=System.currentTimeMillis();
-        MethodClass5 methodClass = new MethodClass5();
+        MethodClass11 methodClass = new MethodClass11();
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -30,7 +30,7 @@ public class ThreadDemo5 {
     }
 }
 
-class MethodClass5{
+class MethodClass11{
     int result;
     public int sum() {
         return result = fibo(36);

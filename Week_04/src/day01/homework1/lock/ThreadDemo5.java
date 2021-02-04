@@ -6,11 +6,11 @@ package day01.homework1.lock;
  * 若子线程先获取到锁，则进行计算，计算后再释放锁，主线程获取到锁，然后拿到计算结果
  * 若主线程先获取到锁,判断下计算结果，如果计算结果等于0，就释放锁，然后等子线程执行完后通知它拿锁
  */
-public class ThreadDemo2 {
+public class ThreadDemo5 {
     public static void main(String[] args) throws InterruptedException {
 
         long start=System.currentTimeMillis();
-        MethodClass2 methodClass = new MethodClass2();
+        MethodClass5 methodClass = new MethodClass5();
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -27,7 +27,7 @@ public class ThreadDemo2 {
     }
 }
 
-class MethodClass2{
+class MethodClass5{
     int result;
 
     public synchronized void sum() {

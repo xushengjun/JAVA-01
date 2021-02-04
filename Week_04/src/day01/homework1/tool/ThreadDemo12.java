@@ -6,10 +6,10 @@ import java.util.concurrent.ExecutionException;
 /**
  * countDownLatch的使用
  */
-public class ThreadDemo9 {
+public class ThreadDemo12 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         long start=System.currentTimeMillis();
-        MethodClass9 methodClass = new MethodClass9();
+        MethodClass12 methodClass = new MethodClass12();
         CountDownLatch countDownLatch = new CountDownLatch(1);
 
         Thread t = new Thread(new Runnable() {
@@ -29,7 +29,7 @@ public class ThreadDemo9 {
     }
 }
 
-class MethodClass9{
+class MethodClass12{
     int result;
     public void sum() {
         result = fibo(36);

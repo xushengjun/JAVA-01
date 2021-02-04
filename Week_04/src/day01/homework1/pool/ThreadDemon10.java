@@ -4,14 +4,14 @@ import java.util.concurrent.*;
 
 import static java.util.concurrent.ForkJoinPool.defaultForkJoinWorkerThreadFactory;
 
-public class ThreadDemon15 {
+public class ThreadDemon10 {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         long start=System.currentTimeMillis();
         // 在这里创建一个线程或线程池，
         ForkJoinPool forkJoinPool = new ForkJoinPool(1, defaultForkJoinWorkerThreadFactory, null, true);
         // 异步执行 下面方法
-        ForkJoinTask<Integer> submit = forkJoinPool.submit(ThreadDemon15::sum);
+        ForkJoinTask<Integer> submit = forkJoinPool.submit(ThreadDemon10::sum);
         int result = submit.get();  //这是得到的返回值
         forkJoinPool.shutdown();
         // 确保  拿到result 并输出

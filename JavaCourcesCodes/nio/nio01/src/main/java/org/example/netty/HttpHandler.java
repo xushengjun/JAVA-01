@@ -22,7 +22,8 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
     public void channelReadComplete(ChannelHandlerContext ctx) {
         ctx.flush();
     }
-
+    //channelRead方法中的msg参数就是请求信息，通过msg可以获取到请求的所有信息，
+    // 有请求头信息（包括请求的地址，GET请求的参数），请求体（POST请求的数据）。
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         try {

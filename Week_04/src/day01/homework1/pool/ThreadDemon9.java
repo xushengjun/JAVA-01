@@ -2,7 +2,7 @@ package day01.homework1.pool;
 
 import java.util.concurrent.*;
 
-public class ThreadDemon14 {
+public class ThreadDemon9 {
     public static void main(String[] args) {
 
         long start=System.currentTimeMillis();

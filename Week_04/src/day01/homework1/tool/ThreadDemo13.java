@@ -6,13 +6,13 @@ import java.util.concurrent.Semaphore;
 /**
  * Semaphore的使用
  */
-public class ThreadDemo10 {
+public class ThreadDemo13 {
 
     public static final Semaphore semaphore = new Semaphore(2);
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         long start=System.currentTimeMillis();
-        MethodClass10 methodClass = new MethodClass10();
+        MethodClass13 methodClass = new MethodClass13();
 
         Thread t = new Thread(new Runnable() {
             @Override
@@ -38,7 +38,7 @@ public class ThreadDemo10 {
     }
 }
 
-class MethodClass10{
+class MethodClass13{
     int result;
     public void sum() throws InterruptedException {
         result = fibo(36);

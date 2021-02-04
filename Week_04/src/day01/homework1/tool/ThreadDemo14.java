@@ -9,10 +9,10 @@ import java.util.concurrent.Semaphore;
 /**
  * CyclicBarrier的使用
  */
-public class ThreadDemo11 {
+public class ThreadDemo14 {
     public static void main(String[] args) throws InterruptedException, ExecutionException, BrokenBarrierException {
         long start=System.currentTimeMillis();
-        MethodClass11 methodClass = new MethodClass11();
+        MethodClass14 methodClass = new MethodClass14();
 
         CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
         Thread t = new Thread(new Runnable() {
@@ -35,7 +35,7 @@ public class ThreadDemo11 {
     }
 }
 
-class MethodClass11{
+class MethodClass14{
     int result;
     public void sum()  {
         result = fibo(36);

@@ -10,11 +10,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * 若子线程先获取到锁，则进行计算，计算后再释放锁，主线程获取到锁，然后拿到计算结果
  * 主线程在30ms后开始不断去试着拿锁，并且每个之后每个30ms拿一下锁，拿到了就是子线程执行完成了
  */
-public class ThreadDemo3 {
+public class ThreadDemo6 {
     public static void main(String[] args) throws InterruptedException {
 
         long start=System.currentTimeMillis();
-        MethodClass3 methodClass = new MethodClass3();
+        MethodClass6 methodClass = new MethodClass6();
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -31,7 +31,7 @@ public class ThreadDemo3 {
     }
 }
 
-class MethodClass3{
+class MethodClass6{
     volatile int result;
     private Lock lock = new ReentrantLock();
     public  void sum() {
