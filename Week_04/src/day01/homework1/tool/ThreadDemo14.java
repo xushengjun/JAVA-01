@@ -1,6 +1,5 @@
 package day01.homework1.tool;
 
-import day01.homework1.tool.MethodClass10;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

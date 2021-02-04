@@ -5,11 +5,11 @@ import java.util.concurrent.*;
 /**
  * CompletableFuture allOf的使用
  */
-public class ThreadDemo13 {
+public class ThreadDemo3 {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException, BrokenBarrierException {
         long start=System.currentTimeMillis();
-        MethodClass13 methodClass = new MethodClass13();
+        MethodClass3 methodClass = new MethodClass3();
 
         CompletableFuture.allOf(CompletableFuture.supplyAsync(()-> methodClass.sum())).join();
 
@@ -20,7 +20,7 @@ public class ThreadDemo13 {
     }
 }
 
-class MethodClass13{
+class MethodClass3{
     int result;
 
     public int sum()  {

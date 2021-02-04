@@ -1,10 +1,6 @@
-package day01.homework1;
+package day01.homework1.status;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * 使用Thread.activeCount()配合yield方法

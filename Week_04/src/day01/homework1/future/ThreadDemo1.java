@@ -7,11 +7,11 @@ import java.util.concurrent.FutureTask;
 /**
  * 使用futureTask获取线程返回对象
  */
-public class ThreadDemo4 {
+public class ThreadDemo1 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
         long start=System.currentTimeMillis();
-        MethodClass4 methodClass = new MethodClass4();
+        MethodClass1 methodClass = new MethodClass1();
         FutureTask<Integer> futureTask = new FutureTask<>(new Callable<Integer>() {
             @Override
             public Integer call() throws Exception {
@@ -28,7 +28,7 @@ public class ThreadDemo4 {
     }
 }
 
-class MethodClass4{
+class MethodClass1{
     volatile int result;
     public int sum() {
         return result = fibo(36);
