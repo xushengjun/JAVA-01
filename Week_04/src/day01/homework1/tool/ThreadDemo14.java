@@ -4,7 +4,6 @@ package day01.homework1.tool;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Semaphore;
 
 /**
  * CyclicBarrier的使用

@@ -3,7 +3,7 @@ package day01.homework1.future;
 import java.util.concurrent.*;
 
 /**
- * CompletableFuture allOf的使用
+ * CompletableFuture supplyAsync的使用
  */
 public class ThreadDemo2 {
 
