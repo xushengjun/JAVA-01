@@ -1,0 +1,23 @@
+
+student:
+  id: 1
+  name: xsj
+  isopen: true
+
+klass:
+  students:
+    - id: 11
+      name: xu
+    - id: 12
+      name: sj
+
+school:
+  klasses:
+    students:
+      - id: 110
+        name: xiaoming
+      - id: 120
+        name: xiaotian
+  student:
+    - id: 220
+      name: haha
