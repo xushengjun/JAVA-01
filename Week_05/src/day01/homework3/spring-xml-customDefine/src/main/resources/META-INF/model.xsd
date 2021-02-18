@@ -1,11 +1,8 @@
 <?xml version="1.0"?>
 <xsd:schema
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:beans="http://www.springframework.org/schema/beans"
-        xmlns="http://demo1.example.com/schema1"
-        targetNamespace="http://demo1.example.com/schema1">
-
-    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+        xmlns="http://xsj.example.com/schema"
+        targetNamespace="http://xsj.example.com/schema">
 
     <xsd:complexType name="studentType">
         <xsd:attribute name="id" type="xsd:int">
@@ -17,10 +14,5 @@
     <xsd:element name="student" type="studentType">
     </xsd:element>
 
-    <xsd:group name="studentList">
-        <xsd:sequence>
-            <xsd:element ref="student"/>
-        </xsd:sequence>
-    </xsd:group>
 
 </xsd:schema>
