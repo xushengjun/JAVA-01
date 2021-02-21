@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.example.mapper.UserInfoMapper">
+    <resultMap id="userResultMap" type="org.example.entity.UserInfo">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="skill" property="skill"/>
+        <result column="evaluate" property="evaluate"/>
+        <result column="fraction" property="fraction"/>
+        <result column="sex" property="sex" typeHandler="org.example.typehandler.SexEnumTypeHandler"/>
+    </resultMap>
+    <select id="findAll" resultMap="userResultMap">
+        SELECT * FROM user_info
+    </select>
+</mapper>
