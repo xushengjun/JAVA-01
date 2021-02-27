@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.example.mapper.ItemMapper">
+    <insert id="insertOne" parameterType="org.example.entity.ItemEntity"
+        useGeneratedKeys="true" keyProperty="id">
+        insert into t_item
+        (id,item_hs_code,item_name,item_type,item_weight ,
+        item_price,status,create_time,update_time)
+        values (
+            #{id},#{itemHSCode},#{itemName},#{itemType},
+            #{itemWeight},#{itemPrice},#{status},now(),
+            now()
+        )
+    </insert>
+    <insert id="insertBatch" parameterType="list">
+        <selectKey resultType="integer" keyProperty="id" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into t_item values
+        (id,item_hs_code,item_name,item_type,item_weight ,
+        item_price,status,create_time,update_time)
+        <foreach collection ="list" item="item" index= "index" separator ="," >
+            (#{item.id},#{item.itemHSCode},#{item.itemName},#{item.itemType},
+            #{item.itemWeight},#{item.itemPrice},#{item.status},now(),
+            now())
+        </foreach >
+    </insert>
+    <update id="update">
+        update t_item
+        <set>
+            <if test="itemHSCode != null and itemHSCode != ''">
+                item_hs_code = #{itemHSCode},
+            </if>
+            <if test="itemName != null and itemName != ''">
+                item_name = #{itemName},
+            </if>
+            <if test="itemType != null and itemType != ''">
+                item_type = #{itemType},
+            </if>
+            <if test="itemWeight != null and itemWeight != ''">
+                item_weight =  #{itemWeight},
+            </if>
+            <if test="itemPrice != null and itemPrice != ''">
+                item_price = #{itemPrice},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+            update_time = now()
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from t_item where id = #{id}
+    </delete>
+
+
+    <select id="findAll" resultType="org.example.entity.ItemEntity">
+        SELECT * FROM t_item limit 10
+    </select>
+    <select id="findById" resultType="org.example.entity.ItemEntity">
+        select * from t_item where id = #{itemId}
+    </select>
+</mapper>
