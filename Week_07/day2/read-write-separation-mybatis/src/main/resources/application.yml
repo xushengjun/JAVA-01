@@ -1,0 +1,37 @@
+server:
+  port: 8881
+
+spring:
+  #数据库连接配置
+  datasource:
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.99.105:3306/maple_master?characterEncoding=utf-8&useSSL=false
+      username: root
+      password: masterpwd
+    slave:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.99.105:3307/maple_master?characterEncoding=utf-8&useSSL=false
+      username: root
+      password: slavepwd
+    slave2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.99.105:3308/maple_master?characterEncoding=utf-8&useSSL=false
+      username: root
+      password: slavepwd
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zhg.demo.mybatis.entity
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    org.example.mapper: DEBUG

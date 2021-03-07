@@ -9,15 +9,15 @@ import java.util.Arrays;
 /*
     使用JDBC技术,实现对数据库表的增删改查
  */
-public class Demo03JDBC {
+public class DemoJDBC {
     public static void main(String[] args) throws SQLException {
         long[] time = new long[10];
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; ) {
             long start = System.currentTimeMillis();
             insertBatch();
             long end = System.currentTimeMillis();
             time[i] = end-start;
-            System.out.println("第"+i+"次批量插入");
+            System.out.println("第"+ ++i +"次批量插入");
             truncate();
         }
 
@@ -208,12 +208,11 @@ public class Demo03JDBC {
                     "values ( 2,1,2,11.0,1,now(),now() )");
             for (int i = 0; i < 1000000; i++) {
                 pstat.addBatch();
-                if (i%5000==0){
+                if (i%500==0){
                     pstat.executeBatch();
                 }
             }
             pstat.executeLargeBatch();
-            pstat.executeBatch();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
