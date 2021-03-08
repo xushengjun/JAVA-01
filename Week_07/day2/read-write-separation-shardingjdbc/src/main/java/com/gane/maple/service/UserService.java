@@ -9,11 +9,4 @@ public interface UserService {
 
     List<User> selectUsers();
 
-    User selectByUserId(String userId);
-
-    User selectByUserName(String userName);
-
-    User selectByUserNameFromMaster(String userName);
-
-    int insert(User user);
 }

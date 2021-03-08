@@ -20,17 +20,4 @@ public class UserServiceImplTest {
         System.out.println(users);
     }
 
-    @Test
-    public void testSelect(){
-        User user = userService.selectByUserName("maple_master");
-        System.out.println(user);
-
-        User user2 = userService.selectByUserName("maple_master");
-        System.out.println(user2);
-    }
-    @Test
-    public void testInsert(){
-        int i = userService.insert(new User("2","test"));
-        System.out.println("插入成功数量："+i);
-    }
 }
