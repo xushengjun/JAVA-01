@@ -49,6 +49,14 @@ public class UserServiceImplTest {
         System.out.println(isRemove);
     }
 
-
-
+    @Test
+    public void selectOne(){
+        User user = userService.getById(100);
+        System.out.println(user);
+    }
+    @Test
+    public void insertOne(){
+        boolean success = userService.save(new User("100","100"));
+        System.out.println(success);
+    }
 }
