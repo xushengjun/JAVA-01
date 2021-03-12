@@ -1,6 +1,8 @@
 package com.gane.maple.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gane.maple.entity.User;
+import com.gane.maple.mapper.UserMapper;
 import com.gane.maple.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -11,7 +13,7 @@ import java.util.List;
 
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
