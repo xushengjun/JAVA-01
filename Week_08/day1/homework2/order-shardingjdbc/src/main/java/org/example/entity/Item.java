@@ -1,18 +1,22 @@
 package org.example.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.Date;
 @Data
-public class ItemEntity {
+@AllArgsConstructor
+@TableName("t_item")
+public class Item {
     private Long id;
+    @TableField("item_hs_code")
     private String itemHSCode;
     private String itemName;
     private Integer itemType;
     private Double itemWeight;
     private Double itemPrice;
     private Integer status;
-    private Date createTime;
-    private Date updateTime;
+    private Long createTime;
+    private Long updateTime;
 
 }
