@@ -1,0 +1,69 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: bank1-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.105:3306/bank1?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: masterpwd
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    db-config:
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+      #数据库类型
+      db-type: MYSQL
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+org:
+  dromara:
+    hmily:
+      serializer: kryo
+      recoverDelayTime: 30
+      retryMax: 30
+      scheduledDelay: 30
+      scheduledThreadMax: 10
+      repositorySupport: db
+      started: true
+      hmilyDbConfig:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://192.168.99.105:3306/hmily?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: masterpwd
+
+
+
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    org.apache.ibatis: info
+    org.dromara.hmily.bonuspoint: debug
+    org.dromara.hmily.lottery: debug
+    org.dromara.hmily: debug
+    io.netty: info
+    org.example: debug
+
+
